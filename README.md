@@ -6,7 +6,7 @@ Modified codes fixes the lat/lon mismatch issue
 
 ### Two file were altered for code modification:
 
-Cmake_convolution.f
+make_convolution.f
 -------------------
 1) Added variables:
 	- TORF2 	(Line 20)
