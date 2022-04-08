@@ -86,15 +86,14 @@ c        convert from mm/day to ft^3/s and multiply by fraction
          call create_vic_names(jloc,iloc,loc,clen,dprec)
          !print*, INPATH(1:INDEX(INPATH,' ')-1)//LOC(1:CLEN)
 
-	 ! code to match the VIC grid with routing grids
-	 ! Vikalp Mishra - May 7 2021
+
+c	 code to match the VIC grid with routing grids
+c	 Vikalp Mishra - May 7 2021
 	 call match_grid(INPATH,jloc,iloc, FluxFile)
 
          INQUIRE(FILE=INPATH(1:(INDEX(INPATH,' ')-1))//LOC(1:CLEN),
      $                     EXIST=TORF1)
          INQUIRE(FILE=trim(adjustl(FluxFile)),EXIST=TORF2)
-         !write(*,*) trim(adjustl(FluxFile)), torf1, torf2
-         !stop
          if(torf1)then
            OPEN(20,FILE=INPATH(1:(INDEX(INPATH,' ')-1))//
      $        LOC(1:CLEN),
